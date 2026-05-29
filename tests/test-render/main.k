@@ -1,7 +1,7 @@
 import models.io.upbound.dev.meta.v1alpha1 as metav1alpha1
 
-_composition = "apis/crossplanegithubproviders/composition.yaml"
-_xrd = "apis/crossplanegithubproviders/definition.yaml"
+_composition = "apis/githubproviderstacks/composition.yaml"
+_xrd = "apis/githubproviderstacks/definition.yaml"
 
 _items = [
     metav1alpha1.CompositionTest {
@@ -12,8 +12,8 @@ _items = [
             timeoutSeconds = 60
             validate = False
             xr = {
-                apiVersion = "hops.ops.com.ai/v1alpha1"
-                kind = "CrossplaneGitHubProvider"
+                apiVersion = "crossplane.ops.com.ai/v1alpha1"
+                kind = "GitHubProviderStack"
                 metadata.name = "github"
                 spec = {
                     clusterName = "my-cluster"
@@ -56,8 +56,8 @@ _items = [
             timeoutSeconds = 60
             validate = False
             xr = {
-                apiVersion = "hops.ops.com.ai/v1alpha1"
-                kind = "CrossplaneGitHubProvider"
+                apiVersion = "crossplane.ops.com.ai/v1alpha1"
+                kind = "GitHubProviderStack"
                 metadata.name = "github"
                 spec = {
                     clusterName = "my-cluster"
@@ -88,8 +88,8 @@ _items = [
             timeoutSeconds = 60
             validate = False
             xr = {
-                apiVersion = "hops.ops.com.ai/v1alpha1"
-                kind = "CrossplaneGitHubProvider"
+                apiVersion = "crossplane.ops.com.ai/v1alpha1"
+                kind = "GitHubProviderStack"
                 metadata.name = "github"
                 spec = {
                     clusterName = "my-cluster"

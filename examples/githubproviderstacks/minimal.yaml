@@ -1,5 +1,5 @@
-apiVersion: hops.ops.com.ai/v1alpha1
-kind: CrossplaneGitHubProvider
+apiVersion: crossplane.ops.com.ai/v1alpha1
+kind: GitHubProviderStack
 metadata:
   name: github
   namespace: default

@@ -30,10 +30,10 @@ jobs:
     with:
       examples: |
         [
-          { "example": "examples/crossplanegithubproviders/minimal.yaml" },
-          { "example": "examples/crossplanegithubproviders/full.yaml" }
+          { "example": "examples/githubproviderstacks/minimal.yaml" },
+          { "example": "examples/githubproviderstacks/full.yaml" }
         ]
-      api_path: apis/crossplanegithubproviders
+      api_path: apis/githubproviderstacks
       error_on_missing_schemas: true
 
   test:

@@ -1,11 +1,11 @@
 SHELL := /bin/bash
 
-PACKAGE ?= crossplane-github-provider
-XRD_DIR := apis/crossplanegithubproviders
+PACKAGE ?= crossplane-github-provider-stack
+XRD_DIR := apis/githubproviderstacks
 COMPOSITION := $(XRD_DIR)/composition.yaml
 DEFINITION := $(XRD_DIR)/definition.yaml
 CONFIGURATION := $(XRD_DIR)/configuration.yaml
-EXAMPLE_DEFAULT := examples/crossplanegithubproviders/minimal.yaml
+EXAMPLE_DEFAULT := examples/githubproviderstacks/minimal.yaml
 RENDER_TESTS := $(wildcard tests/test-*)
 E2E_TESTS := $(wildcard tests/e2etest-*)
 
@@ -22,8 +22,8 @@ generate-configuration:
 	hops validate generate-configuration --path . --api-path "$(XRD_DIR)"
 
 EXAMPLES := \
-    examples/crossplanegithubproviders/minimal.yaml:: \
-    examples/crossplanegithubproviders/full.yaml::
+    examples/githubproviderstacks/minimal.yaml:: \
+    examples/githubproviderstacks/full.yaml::
 
 render\:all:
 	@tmpdir=$$(mktemp -d); \
@@ -92,11 +92,11 @@ render: ; @$(MAKE) 'render:all'
 validate: ; @$(MAKE) generate-configuration 'validate:all'
 
 render\:%:
-	@example="examples/crossplanegithubproviders/$*.yaml"; \
+	@example="examples/githubproviderstacks/$*.yaml"; \
 	up composition render --xrd=$(DEFINITION) $(COMPOSITION) $$example
 
 validate\:%: generate-configuration
-	@example="examples/crossplanegithubproviders/$*.yaml"; \
+	@example="examples/githubproviderstacks/$*.yaml"; \
 	up composition render --xrd=$(DEFINITION) $(COMPOSITION) $$example \
 		--include-full-xr --quiet | \
 		crossplane beta validate $(CONFIGURATION),$(XRD_DIR) --error-on-missing-schemas -

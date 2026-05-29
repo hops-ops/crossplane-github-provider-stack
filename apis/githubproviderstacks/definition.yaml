@@ -1,12 +1,12 @@
 apiVersion: apiextensions.crossplane.io/v2
 kind: CompositeResourceDefinition
 metadata:
-  name: crossplanegithubproviders.hops.ops.com.ai
+  name: githubproviderstacks.crossplane.ops.com.ai
 spec:
-  group: hops.ops.com.ai
+  group: crossplane.ops.com.ai
   names:
-    kind: CrossplaneGitHubProvider
-    plural: crossplanegithubproviders
+    kind: GitHubProviderStack
+    plural: githubproviderstacks
   scope: Namespaced
   defaultCompositeDeletePolicy: Foreground
   versions:
