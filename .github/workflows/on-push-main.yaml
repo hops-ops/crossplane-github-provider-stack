@@ -25,8 +25,8 @@ jobs:
     with:
       examples: |
         [
-      { "example": "examples/crossplanegithubproviders/minimal.yaml" },
-      { "example": "examples/crossplanegithubproviders/full.yaml" }
+          { "example": "examples/crossplanegithubproviders/minimal.yaml" },
+          { "example": "examples/crossplanegithubproviders/full.yaml" }
         ]
       api_path: apis/crossplanegithubproviders
       error_on_missing_schemas: true
